@@ -1,0 +1,306 @@
+html {
+    background-image: url(_Assests/bg.png);
+}
+
+body {
+    //background-color: beige;
+    font-family: "Trebuchet MS";
+    font-size: 16px;
+    margin:0 auto;
+    width: 800px;
+}
+
+div.header {
+    font-size: 50px;
+    font-weight: 600;
+    //width: 286px;
+    //height:48px;
+    position: relative;
+    padding: 50px 0px 20px 10px;
+    margin-bottom: 40px;
+}
+
+div.headerRight {
+    font-size: 20px;
+    font-weight: normal;
+    position: absolute;
+    top: 78px;
+    left:330px;
+}
+
+div.headerBottom {
+    font-size: 20px;
+    font-weight: normal;
+    position: absolute;
+}
+
+div.nav {
+    background-color: black;
+    font-size: 15px;
+    font-weight: 100;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+table#nav {
+    border-collapse: collapse;
+    width: 50%;
+    text-align: center;
+    margin-left: 40px;
+    border-radius: 5px;
+}
+
+table#nav a {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    color:white;
+}
+
+td:hover {
+    background-color:rgb(197,69,83);
+    color: white;
+}
+
+td#left {
+    background-color: rgb(197,69,83);
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+td#left:hover {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+td#right:hover {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+div.content1 {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+div#article1 {
+    padding: 25px 50px 10px 22px;
+    position: relative;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 500;
+    color: rgb(197,69,83);
+    line-height: 25px;
+}
+
+h2 {
+    font-weight: 300;
+    color: rgb(197,69,83);
+}
+
+p {
+    font-size: 14px;
+    line-height: 5px;
+}
+
+div#smLogo {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    border: 2px solid ;
+    border-color: #ddd;
+}
+
+div.content2 {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 60px;
+}
+
+td.bottomLine {
+    border-bottom: 1px solid #ddd;
+}
+
+table#content2 {
+    border-collapse: collapse;
+    width:720px;
+    margin-left: 60px;
+    margin-right: 20px;
+}
+
+
+div#contentTable {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+div#article2TopL {
+    padding: 15px 10px 80px;
+}
+
+div#article2TopR {
+    position: absolute;
+    top: 35px;
+    right:25px;
+}
+
+div#article2BottomL {
+    padding: 15px 10px 80px;
+}
+
+div#article2BottomR {
+    position: absolute;
+    top: 185px;
+    right:25px;
+}
+
+td:hover h2 {
+    background-color:rgb(197,69,83);
+    color: rgb(255,194,112);
+}
+
+td:hover span u{
+    background-color:rgb(197,69,83);
+    color: rgb(255,194,112);
+}
+
+div.links {
+    height: 100px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+div#blogroll {
+    position: absolute;
+    top: -35px;
+    padding: 0px;
+}
+
+div#social {
+    position: absolute;
+    top: -35px;
+    right: 110px; 
+}
+
+a#l1 {
+    position: absolute;
+    top: 20px;
+    left: 48px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 100;
+    padding: 5px 90px 5px 2px;
+    text-align:right;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a#l1:hover {
+    background-color: rgb(197,69,83);
+    color: white;
+}
+
+a#l2 {
+    position: absolute;
+    top: 20px;
+    left: 250px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 100;
+    padding: 5px 2px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a#l2:hover {
+    background-color: rgb(197,69,83);
+    color: white;
+}
+
+a#l3 {
+    position: absolute;
+    top: 50px;
+    left: 48px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 100;
+    padding: 4px 80px 5px 2px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a#l3:hover {
+    background-color: rgb(197,69,83);
+    color: white;
+}
+
+table#socialTable {
+    position: absolute;
+    top: 20px;
+    right: 0px; 
+    font-size: 14px;
+    font-weight: 100;
+    width: 120px;
+    padding:0px 0px;
+}
+
+a#fb {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+a#fb:hover {
+    color: white;
+}
+
+a#tt {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+a#tt:hover {
+    color: white;
+}
+
+td.bottomLine2 {
+    border-bottom: 1px solid #ddd;
+}
+
+div.footer {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+div#article3L {
+    padding: 15px 35px 35px 20px;
+    position: relative;
+}
+
+div#avatar {
+    position: absolute;
+    top: 27px;
+    left: 200px;
+}
+
+div#article3R {
+    position: absolute;
+    top: 16px;
+    right: 35px;
+}
+
+div.gloss {
+    text-align: right;
+    margin-bottom: 30px;
+}
