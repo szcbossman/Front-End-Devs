@@ -1,0 +1,10 @@
+This is a main project of U.S. congress info platform (web version)
+Collaboration of:
+Frontend:
+  Static: HTML5 CSS3 (basic display)
+  Dynamic: JavaScript (logic)
+Backend: PHP (proxy)
+Framework: Bootstrap3 and AngularJS (elaborate display and MVC manipulation)
+API: Sunlight Congress JSON formatted open API
+Web server: AWS (configured Elastic Beanstalk)
+User Experience: Ajax pre-fetching and Responsive Design (desktop and mobile)
