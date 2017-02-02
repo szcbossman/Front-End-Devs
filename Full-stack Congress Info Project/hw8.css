@@ -1,0 +1,284 @@
+html {
+    background-color: rgb(245,245,245);
+}
+
+body {
+  font-family: 'Open Sans';
+}
+
+#banner {
+    background-color: white;
+}
+
+#logo{
+   left: 50%;
+   position: relative;
+   transform: translateX(-70%);
+}
+
+#headerLogo {
+  max-width:90%; 
+  max-height:90%;
+}
+
+#wrapper {
+  padding-left: 170px;
+  transition: all 0.4s ease 0s;
+}
+
+#sidebar-wrapper {
+  margin-left: -170px;
+  top: 51px;
+  left: 170px;
+  width: 170px;
+  background: rgb(60,60,60);
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+}
+
+#wrapper.active {
+  padding-left: 0;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 0;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  padding-top: 51px;
+  transition: all 0.4s ease 0s;
+}
+
+.page-content {
+    background: rgb(245,245,245);
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 170px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  line-height: 40px;
+  text-indent: -22px;
+}
+
+.sidebar-nav li a {
+  color: #999999;
+  display: block;
+  text-decoration: none;
+  padding-left: 60px;
+}
+
+.sidebar-nav li a span:before {
+  position: absolute;
+  left: 0;
+  color: #41484c;
+  text-align: center;
+  width: 20px;
+  line-height: 18px;
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li.active {
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+  text-decoration: none;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 44px;
+  font-size: 18px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: gainsboro;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  /*background: none;*/
+}
+
+
+.sidebar-nav > .sidebar-brand a:visited {
+    background-color: rgb(48,48,48);
+}
+
+
+#menu-toggle {
+    text-decoration: none;
+    float: left;
+    color: #fff;
+    padding-right: 15px;
+}
+
+.partyIco {
+    max-width:30px;
+    max-height:30px;
+}
+
+.chamberIco {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+#stateFilter {
+    width: 150px;
+    max-height: 25px;
+}
+
+.fuzzySearch {
+    width:115px;
+}
+
+.fuzzText {
+  max-height: 25px;
+}
+
+.page-header {
+  margin-top: 0px;
+}
+
+
+/*view details' css*/
+.viewDetailPageHeader {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+#backButton {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.detailsFavButton {
+  margin-right: 5px;
+}
+
+#legDetailLine {
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.legDetail_right_heading {
+  margin-top: 0px;
+}
+
+.legAvatar {
+  max-width: 150px;
+  max-height: 500px;
+}
+
+.progress {
+  margin-bottom: 0px;
+}
+
+.socialIco {
+  max-width: 30px;
+  max-width: 30px;
+}
+
+
+/*fav's CSS*/
+.legAvatarXS {
+  max-width: 30px;
+  max-width: 30px;
+}
+
+.favSelected {
+  color: rgb(251,217,97);
+}
+
+.trash:hover {
+  color:red;
+}
+
+
+/*
+for different nav section transitions:
+*/
+.fade.ng-hide {
+  opacity: 0;
+}
+
+.fade.ng-hide-remove,
+.fade.ng-hide-add {
+  display: block !important;
+}
+
+.fade.ng-hide-remove {
+  transition: all linear 300ms;
+}
+
+.fade.ng-hide-add {
+  transition: all linear 0ms;
+}
+
+
+
+
+@media (max-width:767px) {
+
+#wrapper {
+  padding-left: 0px;
+  transition: all 0.4s ease 0s;
+}
+
+#sidebar-wrapper {
+  margin-left: 0px;
+  top: 51px;
+  left: -45px;
+  width: 45px;
+  background: rgb(60,60,60);
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+}
+    
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 45px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper.active {
+  position: relative;
+  left: 45px;
+  transition: all 0.4s ease 0s;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 0px;
+  width: 45px;
+  transition: all 0.4s ease 0s;
+}
+
+#menu-toggle {
+  display: inline-block;
+}
+
+}
