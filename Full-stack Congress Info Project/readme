@@ -8,3 +8,5 @@ Framework: Bootstrap3 and AngularJS (elaborate display and MVC manipulation)
 API: Sunlight Congress JSON formatted open API
 Web server: AWS (configured Elastic Beanstalk)
 User Experience: Ajax pre-fetching and Responsive Design (desktop and mobile)
+
+Shout out @specialfafa for his awesome open source plugin: dirPagination using AngularJS.
