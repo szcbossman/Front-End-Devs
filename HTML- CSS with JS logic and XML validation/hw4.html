@@ -1,0 +1,210 @@
+<html>
+   <head>
+       <title>Homework 4</title>
+<!--
+<BODY>
+This is for USC disclaimer
+</BODY>
+-->
+<style type='text/css'>
+    body{text-align: center;}
+</style>
+            
+       
+  <script>
+
+function generateHTML(xmlDoc) {
+     ELEMENT_NODE = 1;    // MS parser doesn't define Node.ELEMENT_NODE
+           root=xmlDoc.DocumentElement;
+           html_text="<html><head><title>Online Newspaper Listings</title></head><body>";
+           html_text+="<table border='2' width = '800px'>";
+           
+           headers=xmlDoc.getElementsByTagName("Data");
+           html_text+="<tbody>";
+           html_text+="<tr>";
+           x=80;  y=80;
+	   // output the headers
+           for(i=0;i<headers.length;i++) {
+               header = headers[i].firstChild.nodeValue;
+			   html_text+="<th>"+header+"</th>";     
+           }
+           html_text+="</tr>";
+           
+        // output the contents
+           rows = xmlDoc.getElementsByTagName("Row"); 
+           slots = xmlDoc.getElementsByTagName("Slot");
+           newsPapers = xmlDoc.getElementsByTagName("Newspaper");
+           locs = xmlDoc.getElementsByTagName("Location");
+           homePages = xmlDoc.getElementsByTagName("HomePage");
+           logos = xmlDoc.getElementsByTagName("Logo");
+           for(i = 0;i<rows.length;i++) {
+               html_text+="<tr>";
+               if(slots[i].hasChildNodes()) {
+                   slot = slots[i].firstChild.nodeValue;
+               }
+               else {
+                   slot = 'N.A.';
+               }
+               html_text+="<td align = 'center'>"+slot+"</td>";
+               
+               if(newsPapers[i].hasChildNodes()) {
+                   newsPaper = newsPapers[i].firstChild.nodeValue;
+               }
+               else {
+                   newsPaper = 'N.A.';
+               }
+               html_text+="<td align = 'center'>"+newsPaper+"</td>";
+               
+               if(locs[i].children.length == 2) {
+                   loc_0 = loc = locs[i].children[0].firstChild;
+                   loc_1 = loc = locs[i].children[1].firstChild;
+                   if(loc_0 != null && loc_1 != null) {
+                       locCity = locs[i].children[0].firstChild.nodeValue;
+                       locState = locs[i].children[1].firstChild.nodeValue;
+                       if(!locCity.replace(/\s/g, '').length
+                          && locState.replace(/\s/g, '').length) {
+                           html_text+="<td align = 'center'><ul><li>"+locState+"</li></ul></td>";
+                       }
+                       else if(locCity.replace(/\s/g, '').length
+                          && !locState.replace(/\s/g, '').length) {
+                           html_text+="<td align = 'center'><ul><li>"+locCity+"</li></ul></td>";
+                       }
+                       else if(!locCity.replace(/\s/g, '').length 
+                               && !locState.replace(/\s/g, '').length) {
+                           loc = 'N.A.';
+                           html_text+="<td align = 'center'>"+loc+"</td>";
+                       }
+                       else {
+                           html_text+="<td align = 'center'><ul><li>"+locCity+"</li><li>"+locState+"</li></ul></td>";
+                       }
+                   }
+                   else if(loc_0 == null && loc_1 != null) {
+                       locState = locs[i].children[1].firstChild.nodeValue;
+                       if(!locState.replace(/\s/g, '').length) {
+                           loc = 'N.A.';
+                           html_text+="<td align = 'center'>"+loc+"</td>";
+                       }
+                       else {
+                           html_text+="<td align = 'center'><ul><li>"+locState+"</li></ul></td>";
+                       } 
+                   }
+                   else if(loc_0 != null && loc_1 == null) {
+                       locCity = locs[i].children[0].firstChild.nodeValue;
+                      if(!locCity.replace(/\s/g, '').length) {
+                           loc = 'N.A.';
+                           html_text+="<td align = 'center'>"+loc+"</td>";
+                       }
+                       else {
+                           html_text+="<td align = 'center'><ul><li>"+locCity+"</li></ul></td>";
+                       } 
+                   }
+                   else if(loc_0 == null && loc_1 == null) {
+                       loc = 'N.A.';
+                       html_text+="<td align = 'center'>"+loc+"</td>";
+                   }
+               }
+               else if(locs[i].children.length == 1) {
+                   loc_0 = locs[i].children[0].firstChild;
+                   if(loc_0 != null) {
+                       loc = locs[i].children[0].firstChild.nodeValue; 
+                       if(!loc.replace(/\s/g, '').length) {
+                            loc = 'N.A.'
+                            html_text+="<td align = 'center'>"+loc+"</td>";
+                       }
+                       else {
+                            html_text+="<td align = 'center'><ul><li>"+loc+"</li></ul></td>";
+                       }  
+                   }
+                   else {
+                       loc = 'N.A.'
+                       html_text+="<td align = 'center'>"+loc+"</td>";
+                   }
+               }
+               else {
+                   loc = 'N.A.'
+                   html_text+="<td align = 'center'>"+loc+"</td>";
+               }
+               
+               if(homePages[i].hasChildNodes()) {
+                   homepage = homePages[i].firstChild.nodeValue;
+                   html_text+="<td align = 'center'>"+"<a href = '"+homepage+"'>"+homepage+"</td>";
+               }
+               else {
+                   homepage = 'N.A.';
+                   html_text+="<td align = 'center'>"+homepage+"</td>";
+               }
+               
+               if(logos[i].hasChildNodes()) {
+                   logo = logos[i].firstChild.nodeValue;
+                   html_text+="<td align = 'center'><img src='"+logo+"' width='"+x+"' height='"+y+"'></td>" 
+               }
+               else {
+                   logo = 'company logo'
+                   html_text+="<td align = 'center'><img alt='"+logo+"'></td>"
+               }
+                   
+           html_text+="</tr>";
+           }
+    
+           html_text+="</tbody>";  html_text+="</table>";
+           html_text+="</body></html>";  
+           
+}
+
+function viewXML(what) {
+  var URL = what.URL.value;
+  var errMsg = ""; 
+    
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    try {
+        if(document.forms['myform'].URL.value == ""
+          || !document.forms['myform'].URL.value.replace(/\s/g, '').length) {
+            errMsg+= "Please enter an XML file URL!";
+            throw errMsg;
+        }
+        xmlhttp=new XMLHttpRequest();  
+        xmlhttp.open("GET",URL,false);
+        xmlhttp.send();
+        if(xmlhttp.status == 404) {
+            errMsg+= "the XML file url does not exist!";
+            throw errMsg;
+        }
+        xmlDoc=xmlhttp.responseXML;
+        if(xmlDoc.getElementsByTagName("parsererror").length > 0) {
+            errMsg+= "There are some error in XML file!";
+            throw errMsg;
+        }
+        if(xmlDoc.getElementsByTagName("Row")[0] == null) {
+            errMsg+= "There are no company entries in XML file!";
+            throw errMsg;
+        }
+        
+    }
+    
+    catch(err) {
+            alert(err);
+            return;
+    }
+   
+ 
+ //FF, execute script once XML object has loaded
+  xmlDoc.onload=generateHTML(xmlDoc);
+  hWin = window.open("", "Assignment4", "height=800,width=825,scrollbars=yes");
+  hWin.document.write(html_text);  
+  hWin.document.close();  
+}
+  </script>
+    </head>
+
+    
+    <body>
+        <h1> <b>Enter URL for Newspaper List XML File</b> </h1>
+Enter a valid XML file url and click on Submit
+        <form name="myform" method="POST" id="location">
+        <input type="text" name="URL" maxlength="255" size="100" value="newslist.xml" />
+        <br />
+        <input type="button" name="submit" value="Submit Query" onClick="viewXML(this.form)" />
+        </form>
+        <noscript>
+    </body>
+</html>
