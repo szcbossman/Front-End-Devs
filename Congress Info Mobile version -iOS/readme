@@ -1,4 +1,8 @@
-This is an iOS version of congress info, specially designed for mobile platform.
-platform: iOS 10.1
-dev version: Xcode 8.1
-dev MVC: Swift 3
+frontend:
+  This is an iOS version of congress info, specially designed for mobile platform.
+  platform: iOS 10.1
+  dev version: Xcode 8.1
+  dev MVC: Swift 3
+backend: the same with web version.
+
+**with third party library pods: Alamofire, SwiftyJSON, Kingfisher
